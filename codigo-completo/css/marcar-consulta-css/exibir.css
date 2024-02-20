@@ -1,0 +1,103 @@
+:root {
+    --color-white: #fff;
+    --color-dark1: #201b2c;
+    --color-dark2: #2b134b;
+    --color-dark3: #480270;
+    --color-dark4: rgb(16, 0, 31)56;
+    --color-dark5: #00000056;
+    --color-letra: #77ffc0;
+    --color-green: #4CAF50; /* Verde */
+    --color-purple: #800080; /* Roxo */
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos da tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 15px 15px 0 0;
+}
+
+.table a {
+    text-decoration: none;
+    color: var(--color-letra); /* Roxo claro */
+    background-color: var(--color-dark1); /* Roxo escuro */
+}
+
+.table th {
+    background-color: var(--color-yellow); /* Amarelo */
+    color: var(--color-purple); /* Roxo */
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--color-dark5); /* Cinza */
+    background-color: var(--color-yellow-light); /* Amarelo claro */
+    color: var(--color-purple); /* Roxo */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-yellow-light); /* Amarelo claro */
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-yellow-light-dark); /* Amarelo claro mais escuro */
+}
+
+/* Estilos para dispositivos pequenos */
+@media screen and (max-width: 768px) {
+    .table th,
+    .table td {
+        padding: 8px;
+    }
+
+    .table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    /* Estilos para o menu responsivo */
+    .btn_iconheader {
+        display: block;
+    }
+
+    .navegador_header {
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: var(--color-dark1); /* Roxo escuro */
+        height: 100%;
+        width: 35vw;
+        padding: 16px;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+
+    #btn-SII {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #btn-SII a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--color-green); /* Verde */
+        color: var(--color-white); /* Branco */
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    #btn-SII a:hover {
+        background-color: #45a049;
+    }
+}

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,600&display=swap');
+
+:root{
+    --color-white: #fff;
+    --color-dark1: #201b2c;
+    --color-dark2: #2b134b;
+    --color-dark3: #480270;
+    --color-dark4: rgb(16, 0, 31)56;
+    --color-dark5: #00000056;
+    --color-letra: #77ffc0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background-color: var(--color-dark1);
+    color: var(--color-letra);
+}
+
+#logoheader{
+    width: 185px;
+}
+
+.header{
+    background-color: var(--color-dark5);
+    box-shadow: 1px 1px 4px var(--color-dark4);
+    height: 56px;    /* 1em = 16px logo,
+                    3,5em = 56px */
+    justify-content: space-between;
+    padding: 1% 10%;
+}
+
+.header, .navegador_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navegador_header a:hover{
+     background-color: var(--color-dark2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navegador_header{
+    gap: 40px;
+    z-index: 2;
+}
+
+.navegador_header > a{
+    text-decoration: none;
+    color: var(--color-letra);
+    transition: 1s;
+}
+
+.ativos{
+    background-color: var(--color-dark2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content{
+    text-align: center;
+    padding: 56px;
+    color: var(--color-letra);
+     transition: 1s;
+}
+
+.btn_iconheader{
+    display: none; 
+    background-color: transparent;
+    border: none;
+    color: var(--color-letra);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .btn_iconheader{
+        display: block;
+    }
+    .navegador_header{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: #090011;
+        height: 100%;
+        width: 35vw;
+        padding: 16px;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+}
+
+@keyframes showSidebar {
+    from{margin-left: -100vw;}
+    top{margin-left: -10vw;}
+}
+
+
+label {
+    font-weight: bold;
+    display: relative;
+    margin-bottom: 5px;
+}
+
+.org1 label{
+    font-weight: bold;
+    display: relative;
+    margin-right: 50px;
+}
+
+.invi{
+    color: transparent;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Efeito de transição suave */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #ff4500; /* Cor ao receber foco */
+    display: relative;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#btn-SI {
+    text-align: center;
+}
+
+#btn-SI input {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4500;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Efeito de transição suave */
+}
+
+#btn-SI input:hover {
+    background-color: #333; /* Cor ao passar o mouse */
+}
+
+#btn-SII{
+	margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4500;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Efeito de transição suave */
+}
+
+#btn-SII button:hover{
+	background-color: #333; /* Cor ao passar o mouse */
+}
+
+#btn-SII a{
+	text-decoration: none;
+    color: #fff;
+}
+
+#btn-SII a:hover{
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+	display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+    border: 1px solid #b3b3cc; /* Roxo suave para a borda */
+    font-size: 16px;
+    width: auto; /* Campo de entrada se expandirá conforme o conteúdo */
+    min-height: 50px; /* Altura mínima para o campo de entrada */
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #ff4500;
+}
+
+.form-group input[type="text"]:read-only {
+    background-color: #f0f0f5; /* Roxo suave para campos de leitura apenas */
+    cursor: not-allowed;
+}
+
+.button-modify, .button-back {
+    background-color: #7a7a8c;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-modify:hover, .button-back:hover {
+    background-color: #5a5a6e;
+}

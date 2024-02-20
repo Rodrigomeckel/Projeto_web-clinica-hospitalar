@@ -1,0 +1,110 @@
+// Verifica se o CPF já está cadastrado
+            $check_CPF = "SELECT * FROM consulta WHERE DTA_CONSULTA = '$data'";
+            $CPF_exists = $mysqli->query($check_CPF);
+
+            if ($data_exists->num_rows > 0) {
+                echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                echo '<script>Swal.fire("Erro!", "Este CPF já está cadastrado. Por favor, escolha outro.", "error");</script>';
+            } else {
+                // Insere os dados no banco de dados
+                $sql_code = "INSERT INTO consulta (ESPECIALIDADE, HORA, DTA_CONSULTA) VALUES ('$especialidade', '$horario', '$data')";
+                $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+                if ($sql_query) {
+                    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                    echo '<script>Swal.fire({
+                        title: "Sucesso!",
+                        text: "Cadastro feito!",
+                        icon: "success",
+                        willClose: () => {
+                            window.location.href = "https://aash.bio/tela-ini.php"; // Substitua "pagina_de_redirecionamento.php" pelo URL da página para a qual deseja redirecionar
+                        }
+                    });</script>';
+                } else {
+                    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                    echo '<script>Swal.fire("Erro!", "Erro ao cadastrar. Por favor, tente novamente mais tarde.", "warning");</script>';
+                }
+				
+				
+				 $vbcomando1 = "SELECT * FROM consulta WHERE CPF = '$cpf' AND DTA_CONSULTA = '$data' AND ESPECIALIDADE = '$especialidade' AND HORA = '$horario'";
+$vbresultado1 = $mysqli->query($vbcomando1);
+
+            if ($vbrusultado1 ->num_rows > 0) {
+                echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                echo '<script>Swal.fire("Erro!", "Este CPF já está cadastrado. Por favor, escolha outro.", "error");</script>';
+            }
+			 $vbcomanddta = "SELECT * FROM consulta WHERE CPF = '$cpf' AND ESPECIALIDADE = '$especialidade' AND HORA = '$horario'";
+			$vbresultdta = $mysqli->query($vbcomanddta);
+			 else if($vbrusultado1 ->num_rows > 0){
+				 
+			 }
+			 $vbcomandhr = "SELECT * FROM consulta WHERE CPF = '$cpf' AND ESPECIALIDADE = '$especialidade' AND DTA_CONSULTA = '$data'";
+			$vbresulthr = $mysqli->query($vbcomandhr);
+			 else if($vbresulthr -> num_rows > 0){
+			 }
+			 $vbcomandesp = "SELECT * FROM consulta WHERE CPF = '$cpf' AND DTA_CONSULTA = '$data' AND HORA = '$horario'";
+			$vbresultesp = $mysqli->query($vbcomandesp);
+			 else if($vbresultesp -> num_rows > 0){
+			 }
+			 else {
+			
+			}
+			
+			
+			
+			<?php
+include('conexao.php');
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (isset($_SESSION['controleuser'])) {
+    $cpf = $_SESSION['controleuser'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = $mysqli->real_escape_string($_POST["nome"]);
+        $data_nascimento = $mysqli->real_escape_string($_POST["idade"]);
+        $grupo_sanguineo = $mysqli->real_escape_string($_POST["tip_sangue"]);
+        $peso = $mysqli->real_escape_string($_POST["peso"]);
+        $altura = $mysqli->real_escape_string($_POST["grpS"]);
+        $sexo = $mysqli->real_escape_string($_POST["sex"]);
+        $alergia = $mysqli->real_escape_string($_POST["alergia"]);
+
+        // Salvar problemas selecionados
+        if (isset($_POST['problemas'])) {
+            $problemas = implode(", ", $mysqli->real_escape_string($_POST['problemas']));
+        } else {
+            $problemas = "";
+        }
+
+        // Salvar vacinas selecionadas
+        if (isset($_POST['vacinas'])) {
+            $vacinas = implode(", ", $mysqli->real_escape_string($_POST['vacinas']));
+        } else {
+            $vacinas = "";
+        }
+
+        // Inserir todos os dados do paciente na tabela ficha_medica
+        $sql_exe = "INSERT INTO ficha_medica (cpf, nome, data_nascimento, grupo_sanguineo, peso, altura, sexo, alergia, problemas, vacinas) 
+                VALUES ('$cpf', '$nome', '$data_nascimento', '$grupo_sanguineo', '$peso', '$altura', '$sexo', '$alergia', '$problemas', '$vacinas')";
+		$sql_result = $mysqli->query($sql_exe) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+        if ($sql_result) {
+            // Inserção bem-sucedida
+			echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo '<script>Swal.fire("Salvo!", "Dados preenchidos salvos com sucesso!", "sucess");</script>' . $mysqli->error;
+        } else {
+            // Erro na inserção
+			echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo '<script>Swal.fire("Erro!", "Erro ao salvar os dados do paciente: ", "error");</script>' . $mysqli->error;
+        }
+    } else {
+		echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo '<script>Swal.fire("Erro!", "Método de requisição inválido.", "error");</script>';
+    }
+} else {
+    echo "Sessão 'controleuser' não está definida.";
+}
+
+$mysqli->close();
+?> 

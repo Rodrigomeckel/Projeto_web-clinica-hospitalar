@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,600&display=swap');
+
+:root{
+    --color-white: #fff;
+    --color-dark1: #201b2c;
+    --color-dark2: #2b134b;
+    --color-dark3: #480270;
+    --color-dark4: rgb(16, 0, 31)56;
+    --color-dark5: #00000056;
+    --color-letra: #77ffc0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background-color: var(--color-dark1);
+    color: var(--color-letra);
+}
+
+#logoheader{
+    width: 40px;
+}
+
+.header{
+    background-color: var(--color-dark5);
+    box-shadow: 1px 1px 4px var(--color-dark4);
+    height: 56px;    /* 1em = 16px logo,
+                    3,5em = 56px */
+    justify-content: space-between;
+    padding: 1% 10%;
+}
+
+.header, .navegador_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navegador_header a:hover{
+     background-color: var(--color-dark2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navegador_header{
+    gap: 40px;
+    z-index: 2;
+}
+
+.navegador_header > a{
+    text-decoration: none;
+    color: var(--color-letra);
+    transition: 1s;
+}
+
+.ativos{
+    background-color: var(--color-dark2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content{
+    text-align: center;
+    padding: 56px;
+    color: var(--color-letra);
+    height: 100vh;
+    transition: 1s;
+}
+
+.btn_iconheader{
+    display: none; 
+    background-color: transparent;
+    border: none;
+    color: var(--color-letra);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .btn_iconheader{
+        display: block;
+    }
+    .navegador_header{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: #090011;
+        height: 100%;
+        width: 35vw;
+        padding: 16px;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+}
+
+@keyframes showSidebar {
+    from{margin-left: -100vw;}
+    top{margin-left: -10vw;}
+}
+#descricao{
+    text-align: justify;
+    color: #FFFFFF;
+    font-family: 'arial';
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px;   
+
+}
+#banner{
+   background-color: white;
+    text-align: center;
+
+   
+}
+.container{
+    display: flex;
+    text-align: justify;
+     font-size: 20px;
+}
+.container img{
+    width:400px;
+
+}
+.container2{
+text-align: justify;
+     font-size: 20px;
+}
+.marcar-consulta{
+    width: 40%;
+    padding: 20px 10px;
+    margin-inline-start: 30%;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #433763;
+    background: #4af7c9;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+
+}
+
+.marcar-consulta > a{
+    text-decoration: none;
+     color: #3b344f;
+}
+
+.marcar-consulta > a: hover{
+    color: #3b344f;
+}
+
+.marcar-consulta:hover{
+    width: 40%;
+    padding: 20px 0px;
+    margin-inline-start: 30%;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #433763;
+    background: #dcf7f0;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #0123429f;
+}

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,600&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-cadas{
+    width: 100vw;
+    height: 120vh;
+    background-color: #201b2c;
+    padding-top: 55px;
+}
+
+.main-cadas > .cadas{
+    margin-inline-start: 150px;
+}
+
+.cadas{
+    width: 80vw;
+    height: 94.5vh;
+    margin-right: 50%;
+    justify-content: center;
+    align-items: center;
+    background: #2f2841;
+    border-radius: 20px;
+   box-shadow: 0px 22px 50px #77ffc0;
+}
+
+.cadas > h1 {
+    font-size: 5vw;
+    color: #77ffc0;
+    margin-inline-start: 34%;
+}
+
+.textfield > a{
+    color: #f0ffff94;
+    text-decoration: none;
+    font-weight: 200;
+    margin-inline-start: 30%;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 85%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    columns: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+    margin-inline-start: 5%;
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px;
+    margin-inline-start: 5%;
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-final{
+    width: 40%;
+    padding: 20px 0px;
+    margin-inline-start: 30%;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}

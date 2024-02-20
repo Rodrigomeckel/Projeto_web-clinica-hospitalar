@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond%{RESQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ %1.hmtl [NC,L]

@@ -1,0 +1,72 @@
+INCLUIR NO CABEÇALHO DA PÁGINA
+***************************************************************************************
+<!-- INCLUI A BIBLIOTECA JQUERY -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+
+<!-- INCLUI O PLUGIN CYCLE -->
+<script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+
+<!-- CHAMADA DA FUNÇÃO QUE EXECUTA O PLUGIN -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('IDENFIFICADOR|CLASSE').cycle({
+		fx: 'EFEITO' // MODIFICA O TIPO DE TRANSIÇÃO
+	});
+});
+</script>
+
+EXEMPLO:
+***************************************************************************************
+SUPONDO QUE #banner É UM ID DE UMA DIV QUE CONTÉM AS IMAGENS QUE SE DESEJA EXIBIR NA TRANSIÇÃO DE SLIDES
+
+<html>
+	<head>
+		<title>EXEMPLO JQUERY CYCLE</title>
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#banner').cycle({
+				fx: 'scrollLeft' // ROLAR A IMAGEM PARA A ESQUERDA
+			});
+		});
+		</script>
+	</head>
+	<body>
+
+	<div id="banner">						
+		<a href="#"><img src="./img/imagem1.jpg"></a>
+		<a href="#"><img src="./img/imagem2.jpg"></a>
+	</body>
+</html>
+
+JQUERY CYCLE PLUGIN - EFEITOS DE TRANSIÇÃO
+***************************************************************************************
+blindX
+blindY
+blindZ
+cover
+curtainX
+curtainY
+fade
+fadeZoom
+growX
+growY
+none
+scrollUp
+scrollDown
+scrollLeft
+scrollRight
+scrollHorz
+scrollVert
+shuffle
+slideX
+slideY
+toss
+turnUp
+turnDown
+turnLeft
+turnRight
+uncover
+wipe
+zoom
